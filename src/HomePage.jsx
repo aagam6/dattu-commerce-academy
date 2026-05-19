@@ -393,4 +393,4 @@ export default function HomePage() {
                   display: "inline-block", fontFamily: "'Bebas Neue',sans-serif", fontSize: 18,
                   color: "#fb923c", border: "2px solid #fdba74", borderRadius: 10,
                   padding: "2px 12px", marginBottom: 14
-  }}, 
+  }}>
