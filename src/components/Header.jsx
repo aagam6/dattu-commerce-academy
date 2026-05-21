@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import {
   motion,
   AnimatePresence,
@@ -109,8 +111,8 @@ export default function Header() {
         >
 
           {/* LOGO */}
-          <a
-            href="#home"
+          <Link
+            to="/"
             className="
             flex
             items-center
@@ -124,8 +126,11 @@ export default function Header() {
                 scale: 1.06,
                 rotate: 2,
               }}
+
               src="/logo.png"
+
               alt="Dattu Sir's Commerce Academy Ahmedabad"
+
               className="
               w-14
               h-14
@@ -159,7 +164,7 @@ export default function Header() {
 
             </div>
 
-          </a>
+          </Link>
 
           {/* DESKTOP NAV */}
           <nav
@@ -340,17 +345,21 @@ export default function Header() {
               opacity: 0,
               y: -20,
             }}
+
             animate={{
               opacity: 1,
               y: 0,
             }}
+
             exit={{
               opacity: 0,
               y: -20,
             }}
+
             transition={{
               duration: 0.3,
             }}
+
             className="
             fixed
             inset-0
@@ -377,7 +386,11 @@ export default function Header() {
                   key={i}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  whileHover={{ x: 5 }}
+
+                  whileHover={{
+                    x: 5,
+                  }}
+
                   className={`
                   flex
                   items-center
@@ -415,6 +428,7 @@ export default function Header() {
                 href="https://wa.me/919825249281"
                 target="_blank"
                 rel="noopener noreferrer"
+
                 className="
                 w-full
                 bg-accent
@@ -439,6 +453,7 @@ export default function Header() {
 
               <a
                 href="tel:+919825249281"
+
                 className="
                 w-full
                 rounded-3xl
