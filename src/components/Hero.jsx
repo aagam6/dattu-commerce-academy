@@ -555,42 +555,7 @@ export default function Hero() {
 
       </div>
 
-      {/* SCROLL */}
-      <motion.div
-        animate={{
-          y: [0, 10, 0],
-        }}
-
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-        }}
-
-        className="
-        absolute
-        bottom-6
-        left-1/2
-        -translate-x-1/2
-        flex
-        flex-col
-        items-center
-        text-white/60
-        "
-      >
-
-        <span className="text-sm mb-2">
-          Scroll Down
-        </span>
-
-        <ChevronDown
-          className="
-          text-accent
-          w-9
-          h-9
-          "
-        />
-
-      </motion.div>
+  
 
     </section>
 

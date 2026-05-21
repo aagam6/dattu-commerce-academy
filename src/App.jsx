@@ -6,15 +6,12 @@ import {
   Route,
 } from 'react-router-dom';
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 /* COMPONENTS */
 import LoadingScreen from './components/LoadingScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
-import StickyWhatsApp from './components/StickyWhatsApp';
-import StickyCall from './components/StickyCall';
 
 /* PAGES */
 import HomePage from './pages/HomePage';
@@ -54,12 +51,10 @@ function App() {
       {/* GLOBAL SEO */}
       <Helmet>
 
-        {/* TITLE */}
         <title>
           Dattu Sir's Commerce Academy | Best Commerce Classes In Ahmedabad
         </title>
 
-        {/* BASIC SEO */}
         <meta
           name="description"
           content="
@@ -105,7 +100,6 @@ function App() {
           content="#061547"
         />
 
-        {/* CANONICAL */}
         <link
           rel="canonical"
           href="https://dattusiracademy.com/"
@@ -136,16 +130,11 @@ function App() {
         />
 
         <meta
-          property="og:site_name"
-          content="Dattu Sir's Commerce Academy"
-        />
-
-        <meta
           property="og:image"
           content="https://dattusiracademy.com/logo.png"
         />
 
-        {/* TWITTER SEO */}
+        {/* TWITTER */}
         <meta
           name="twitter:card"
           content="summary_large_image"
@@ -176,7 +165,7 @@ function App() {
           href="/logo.png"
         />
 
-        {/* PRECONNECT */}
+        {/* FONTS */}
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"
@@ -229,10 +218,6 @@ function App() {
 
             areaServed: "Ahmedabad",
 
-            sameAs: [
-              "https://wa.me/919825249281",
-            ],
-
           })}
 
         </script>
@@ -259,13 +244,11 @@ function App() {
 
           <Routes>
 
-            {/* HOMEPAGE */}
             <Route
               path="/"
               element={<HomePage />}
             />
 
-            {/* BLOGS */}
             <Route
               path="/blog/best-commerce-classes-ahmedabad"
               element={<BestCommerceClasses />}
@@ -287,11 +270,6 @@ function App() {
 
         {/* FOOTER */}
         <Footer />
-
-        {/* FLOATING BUTTONS */}
-        <StickyWhatsApp />
-
-        <StickyCall />
 
       </div>
 

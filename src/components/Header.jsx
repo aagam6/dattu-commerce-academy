@@ -66,29 +66,6 @@ export default function Header() {
 
     <>
 
-      {/* TOP BAR */}
-      <div
-        className="
-        fixed
-        top-0
-        left-0
-        w-full
-        z-[60]
-        bg-accent
-        text-white
-        py-2
-        text-center
-        text-sm
-        font-semibold
-        tracking-wide
-        shadow-lg
-        "
-      >
-
-        Admissions Open For 2026 Batch • Limited Seats Available
-
-      </div>
-
       {/* HEADER */}
       <motion.header
         initial={{ y: -120 }}
@@ -96,6 +73,7 @@ export default function Header() {
         transition={{ duration: 0.5 }}
         className={`
         fixed
+        top-0
         left-0
         w-full
         z-50
@@ -104,8 +82,8 @@ export default function Header() {
 
         ${
           isScrolled
-            ? "top-[36px] bg-[#071547]/75 backdrop-blur-3xl border-b border-accent/20 shadow-[0_8px_30px_rgba(255,122,26,0.08)]"
-            : "top-[36px] bg-[#071547]/60 backdrop-blur-2xl border-b border-white/10"
+            ? "bg-[#071547]/85 backdrop-blur-3xl border-b border-accent/20 shadow-[0_8px_30px_rgba(255,122,26,0.08)]"
+            : "bg-[#071547]/70 backdrop-blur-2xl border-b border-white/10"
         }
         `}
       >
@@ -136,7 +114,7 @@ export default function Header() {
             className="
             flex
             items-center
-            gap-4
+            gap-3
             flex-shrink-0
             "
           >
@@ -293,7 +271,6 @@ export default function Header() {
               "
             >
 
-              {/* ONLINE DOT */}
               <span
                 className="
                 absolute
@@ -434,13 +411,11 @@ export default function Header() {
             {/* MOBILE CTA */}
             <div className="mt-10 flex flex-col gap-4">
 
-              {/* WHATSAPP */}
               <a
                 href="https://wa.me/919825249281"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                relative
                 w-full
                 bg-accent
                 rounded-3xl
@@ -456,26 +431,12 @@ export default function Header() {
                 "
               >
 
-                <span
-                  className="
-                  absolute
-                  top-3
-                  right-3
-                  w-2.5
-                  h-2.5
-                  rounded-full
-                  bg-green-400
-                  animate-pulse
-                  "
-                />
-
                 <MessageCircle size={22} />
 
-                Admissions Open
+                WhatsApp Now
 
               </a>
 
-              {/* CALL */}
               <a
                 href="tel:+919825249281"
                 className="
@@ -504,7 +465,6 @@ export default function Header() {
 
             </div>
 
-            {/* TRUST TEXT */}
             <p
               className="
               text-center
