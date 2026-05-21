@@ -24,35 +24,18 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Results", href: "#results" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/#home" },
+    { label: "About", href: "/#about" },
+    { label: "Results", href: "/#results" },
+    { label: "Testimonials", href: "/#testimonials" },
+    { label: "Contact", href: "/#contact" },
   ];
 
-  /* ACTIVE SECTION */
   useEffect(() => {
 
     const handleScroll = () => {
 
       setIsScrolled(window.scrollY > 20);
-
-      const sections = navLinks.map((link) =>
-        document.querySelector(link.href)
-      );
-
-      sections.forEach((section) => {
-
-        if (!section) return;
-
-        const rect = section.getBoundingClientRect();
-
-        if (rect.top <= 120 && rect.bottom >= 120) {
-          setActiveSection(`#${section.id}`);
-        }
-
-      });
 
     };
 
@@ -68,11 +51,11 @@ export default function Header() {
 
     <>
 
-      {/* HEADER */}
       <motion.header
         initial={{ y: -120 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
+
         className={`
         fixed
         top-0
@@ -181,26 +164,23 @@ export default function Header() {
               <a
                 key={i}
                 href={link.href}
-                className={`
+
+                className="
                 relative
                 text-[16px]
                 font-medium
                 transition-all
                 duration-300
                 group
-
-                ${
-                  activeSection === link.href
-                    ? "text-accent"
-                    : "text-white/80 hover:text-accent"
-                }
-                `}
+                text-white/80
+                hover:text-accent
+                "
               >
 
                 {link.label}
 
                 <span
-                  className={`
+                  className="
                   absolute
                   left-0
                   -bottom-2
@@ -209,13 +189,9 @@ export default function Header() {
                   transition-all
                   duration-300
                   origin-left
-
-                  ${
-                    activeSection === link.href
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
-                  }
-                  `}
+                  w-0
+                  group-hover:w-full
+                  "
                 />
 
               </a>
@@ -234,10 +210,9 @@ export default function Header() {
             "
           >
 
-            {/* CALL */}
             <a
               href="tel:+919825249281"
-              aria-label="Call Dattu Sir"
+
               className="
               w-12
               h-12
@@ -260,12 +235,11 @@ export default function Header() {
 
             </a>
 
-            {/* WHATSAPP BUTTON */}
             <a
               href="https://wa.me/919825249281"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Open WhatsApp Chat"
+
               className="
               relative
               btn-primary
@@ -293,7 +267,6 @@ export default function Header() {
 
                 <MessageCircle
                   size={20}
-                  className="animate-pulse"
                 />
 
                 Admissions Open
@@ -307,6 +280,7 @@ export default function Header() {
           {/* MOBILE BUTTON */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+
             className="
             lg:hidden
             w-12
@@ -385,13 +359,14 @@ export default function Header() {
                 <motion.a
                   key={i}
                   href={link.href}
+
                   onClick={() => setIsMenuOpen(false)}
 
                   whileHover={{
                     x: 5,
                   }}
 
-                  className={`
+                  className="
                   flex
                   items-center
                   justify-between
@@ -400,15 +375,9 @@ export default function Header() {
                   rounded-3xl
                   text-lg
                   font-semibold
-                  transition-all
-                  duration-300
-
-                  ${
-                    activeSection === link.href
-                      ? "bg-accent text-white"
-                      : "bg-white/5 text-white/80"
-                  }
-                  `}
+                  bg-white/5
+                  text-white/80
+                  "
                 >
 
                   {link.label}
@@ -420,76 +389,6 @@ export default function Header() {
               ))}
 
             </div>
-
-            {/* MOBILE CTA */}
-            <div className="mt-10 flex flex-col gap-4">
-
-              <a
-                href="https://wa.me/919825249281"
-                target="_blank"
-                rel="noopener noreferrer"
-
-                className="
-                w-full
-                bg-accent
-                rounded-3xl
-                py-5
-                flex
-                items-center
-                justify-center
-                gap-3
-                text-white
-                font-bold
-                text-lg
-                shadow-[0_15px_40px_rgba(255,122,26,0.30)]
-                "
-              >
-
-                <MessageCircle size={22} />
-
-                WhatsApp Now
-
-              </a>
-
-              <a
-                href="tel:+919825249281"
-
-                className="
-                w-full
-                rounded-3xl
-                border
-                border-white/10
-                bg-white/5
-                backdrop-blur-xl
-                py-5
-                flex
-                items-center
-                justify-center
-                gap-3
-                text-white
-                font-semibold
-                text-lg
-                "
-              >
-
-                <Phone size={20} />
-
-                Call Now
-
-              </a>
-
-            </div>
-
-            <p
-              className="
-              text-center
-              text-white/40
-              text-sm
-              mt-10
-              "
-            >
-              Trusted By 5000+ Commerce Students Since 2003
-            </p>
 
           </motion.div>
 
