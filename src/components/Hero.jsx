@@ -17,7 +17,7 @@ export default function Hero() {
   const stats = [
     {
       icon: <Users size={32} />,
-      value: 2500,
+      value: 10000,
       suffix: '+',
       label: 'Successful Students',
     },
@@ -31,7 +31,7 @@ export default function Hero() {
 
     {
       icon: <Smile size={32} />,
-      value: 5000,
+      value: 20000,
       suffix: '+',
       label: 'Happy Parents',
     },

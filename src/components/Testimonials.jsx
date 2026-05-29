@@ -190,7 +190,7 @@ export default function Testimonials() {
 
           {[
             {
-              value: "2500+",
+              value: "10000+",
               label: "Students",
             },
 
